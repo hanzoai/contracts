@@ -13,18 +13,21 @@ contract Whitelist is Ownable {
     constructor() Ownable() public {}
 
     function addToWhitelist(address addr) public onlyOwner {
+        require(addr != address(0));
         whitelist[addr] = true;
         whitelistNum++;
         emit AddedToWhitelist(addr);
     }
 
     function removeFromWhitelist(address addr) public onlyOwner {
+        require(addr != address(0));
         whitelist[addr] = false;
         whitelistNum++;
         emit RemovedFromWhitelist(addr);
     }
 
     function isWhitelisted(address addr) public view returns (bool) {
+        require(addr != address(0));
         if (whitelistNum == 0) {
             return false;
         }
