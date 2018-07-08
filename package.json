@@ -1,6 +1,6 @@
 {
   "name": "hanzo-solidity",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Solidity contracts developed for the Hanzo Platform",
   "main": "truffle.js",
   "directories": {
