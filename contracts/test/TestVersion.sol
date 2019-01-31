@@ -1,8 +1,8 @@
-pragma solidity 0.4.24;
+pragma solidity >=0.4.25 <0.6.0;
 
 
 contract TestVersion {
-    function version() public pure returns (string) {
+    function version() public pure returns (string memory) {
         return "1.0.0";
     }
 

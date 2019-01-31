@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity >=0.4.25 <0.6.0;
 
 
 contract Proxy {
@@ -6,10 +6,9 @@ contract Proxy {
 
     // solium-disable
     // solhint-disable
-    function () payable public {
-        // Require successfull delegate call
-
-        require(delegate.delegatecall(msg.data));
+    function () payable external {
+        (bool ok,) = delegate.delegatecall(msg.data);
+        require(ok);
         assembly {
             let outsize := returndatasize
             let outptr := mload(0x40) // Load memory

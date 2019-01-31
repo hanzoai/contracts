@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity >=0.4.25 <0.6.0;
 
 
 contract TestDelegate {
@@ -7,7 +7,7 @@ contract TestDelegate {
 
     enum Choices {UpHigh, DownLow, TooSlow}
 
-    function staticString() public pure returns (string) {
+    function staticString() public pure returns (string memory) {
         return "bar";
     }
 
@@ -41,7 +41,7 @@ contract TestDelegate {
 
     // This will only work when invoked off the blockchain.
     // Contract-to-contract, only static length types are accepted.
-    function staticStrings() public pure returns (string, string) {
+    function staticStrings() public pure returns (string memory, string memory) {
         return ("foo", "bar");
     }
 
@@ -53,7 +53,7 @@ contract TestDelegate {
         return (42, 43);
     }
 
-    function staticMixed() public pure returns (uint, string) {
+    function staticMixed() public pure returns (uint, string memory) {
         return (42, "bar");
     }
 

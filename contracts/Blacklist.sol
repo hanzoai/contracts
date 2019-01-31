@@ -1,34 +1,34 @@
-pragma solidity 0.4.24;
+pragma solidity >=0.4.25 <0.6.0;
 
-import "zeppelin-solidity/contracts/ownership/Ownable.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 
 contract Blacklist is Ownable {
     mapping (address => bool) blacklist;
-    uint blacklistNum;
+    uint length;
 
-    event AddedToBlacklist(address indexed addr);
-    event RemovedFromBlacklist(address indexed addr);
+    event BlacklistAdded(address indexed addr);
+    event BlacklistRemoved(address indexed addr);
 
     constructor() Ownable() public {}
 
-    function addToBlacklist(address addr) public onlyOwner {
+    function add(address addr) public onlyOwner {
         require(addr != address(0));
         blacklist[addr] = true;
-        blacklistNum++;
-        emit AddedToBlacklist(addr);
+        length++;
+        emit BlacklistAdded(addr);
     }
 
-    function removeFromBlacklist(address addr) public onlyOwner {
+    function remove(address addr) public onlyOwner {
         require(addr != address(0));
         blacklist[addr] = false;
-        blacklistNum--;
-        emit RemovedFromBlacklist(addr);
+        length--;
+        emit BlacklistRemoved(addr);
     }
 
-    function isBlacklisted(address addr) public view returns (bool) {
+    function isListed(address addr) public view returns (bool) {
         require(addr != address(0));
-        if (blacklistNum == 0) {
+        if (length == 0) {
             return false;
         }
         return blacklist[addr];

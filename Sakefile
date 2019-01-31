@@ -6,8 +6,12 @@ task 'clean', 'clean project', ->
   exec 'rm -rf build/contracts'
 
 task 'build', ['compile']
+
 task 'compile', 'build project', ->
   exec 'truffle compile'
+
+task 'deploy', 'deploy contracts', ->
+  exec 'truffle migrate'
 
 task 'test', 'test project', ->
   exec 'truffle test'
