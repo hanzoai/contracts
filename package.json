@@ -7,19 +7,19 @@
     "test": "test"
   },
   "dependencies": {
-    "coveralls": "^3.0.2",
-    "solc": "^0.5.3",
-    "truffle": "^5.0.3",
-    "truffle-contract": "^4.0.4",
     "openzeppelin-solidity": "^2.1.2"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "sake-cli": "^0.7.2",
     "sake-outdated": "^0.4.4",
     "sake-publish": "^0.1.17",
     "sake-version": "^0.1.19",
+    "solc": "^0.5.3",
     "solium": "^1.2.2",
-    "solium-plugin-security": "^0.1.1"
+    "solium-plugin-security": "^0.1.1",
+    "truffle": "^5.0.3",
+    "truffle-contract": "^4.0.4"
   },
   "scripts": {
     "test": "sake test"
