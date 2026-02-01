@@ -1,0 +1,47 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.22"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+evm_version = "cancun"
+
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+    "@luxfi/=lib/standard/contracts/",
+    "forge-std/=lib/forge-std/src/",
+]
+
+[profile.ci]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.22"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+evm_version = "cancun"
+verbosity = 2
+fuzz = { runs = 256 }
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+    "@luxfi/=lib/standard/contracts/",
+    "forge-std/=lib/forge-std/src/",
+]
+
+[fmt]
+bracket_spacing = false
+int_types = "long"
+line_length = 120
+multiline_func_header = "all"
+number_underscore = "thousands"
+quote_style = "double"
+single_line_statement_blocks = "preserve"
+
+[doc]
+out = "docs"
+repository = "https://github.com/hanzoai/hanzo"

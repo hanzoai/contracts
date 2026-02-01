@@ -1,0 +1,36 @@
+{
+  "name": "@hanzo/contracts",
+  "version": "1.0.0",
+  "description": "Hanzo AI Smart Contracts - AI infrastructure and identity on blockchain",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanzoai/hanzo.git",
+    "directory": "contracts"
+  },
+  "homepage": "https://hanzo.ai",
+  "keywords": [
+    "hanzo",
+    "ai",
+    "ethereum",
+    "solidity",
+    "smart-contracts",
+    "identity",
+    "evm"
+  ],
+  "files": [
+    "src/**/*.sol",
+    "out/**/*.json"
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
+    "@luxfi/contracts": "^1.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
