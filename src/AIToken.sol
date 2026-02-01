@@ -1,25 +1,22 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.31;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Pausable.sol";
+import {ERC20, IERC20, IERC20Metadata} from "@luxfi/tokens/LRC20/LRC20.sol";
+import {Ownable} from "@luxfi/access/Access.sol";
+import {Pausable} from "@luxfi/utils/Utils.sol";
 
 /**
  * @title AIToken
- * @dev Governance token for Hanzo AI ecosystem
+ * @author Hanzo AI
+ * @notice Governance token for Hanzo AI ecosystem
  *
  * Features:
- * - Governance voting rights
  * - Staking rewards distribution
  * - Deflationary burn mechanism
  * - Vesting schedules
- * - Delegation support
+ * - Pausable transfers
  */
-contract AIToken is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable, Pausable {
+contract AIToken is ERC20, Ownable, Pausable {
     // Token distribution
     uint256 public constant MAX_SUPPLY = 1_000_000_000 * 10**18; // 1 billion tokens
     uint256 public constant TEAM_ALLOCATION = 150_000_000 * 10**18; // 15%
@@ -92,7 +89,7 @@ contract AIToken is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable, Paus
 
     constructor(
         address _treasuryAddress
-    ) ERC20("AI Token", "AI") ERC20Permit("AI Token") Ownable(msg.sender) {
+    ) ERC20("AI Token", "AI") Ownable(msg.sender) {
         treasuryAddress = _treasuryAddress;
 
         // Initial minting
@@ -257,13 +254,15 @@ contract AIToken is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable, Paus
     }
 
     /**
-     * @dev Override _update to implement fees and pause (OZ v5 pattern)
+     * @dev Override _update to implement fees and pause
      */
     function _update(
         address from,
         address to,
         uint256 amount
-    ) internal virtual override(ERC20, ERC20Votes) whenNotPaused {
+    ) internal virtual override {
+        require(!paused(), "Token transfers paused");
+
         // Don't apply fees on mints, burns, or internal transfers
         if (from != address(0) && to != address(0) &&
             from != address(this) && to != address(this)) {
@@ -332,13 +331,6 @@ contract AIToken is ERC20, ERC20Burnable, ERC20Permit, ERC20Votes, Ownable, Paus
     function updateTreasury(address _treasuryAddress) external onlyOwner {
         require(_treasuryAddress != address(0), "Invalid address");
         treasuryAddress = _treasuryAddress;
-    }
-
-    /**
-     * @dev Required override for nonces (ERC20Permit and Nonces conflict)
-     */
-    function nonces(address owner) public view virtual override(ERC20Permit, Nonces) returns (uint256) {
-        return super.nonces(owner);
     }
 
     /**

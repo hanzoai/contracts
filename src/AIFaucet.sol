@@ -1,13 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.31;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Pausable.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {Ownable} from "@luxfi/access/Access.sol";
+import {Pausable} from "@luxfi/utils/Utils.sol";
+import {IERC20} from "@luxfi/tokens/LRC20/LRC20.sol";
 
 /**
  * @title AIFaucet
- * @dev Faucet for distributing AI tokens for identity registration
+ * @author Hanzo AI
+ * @notice Faucet for distributing AI tokens for identity registration
  *
  * Features:
  * - Rate limiting per address

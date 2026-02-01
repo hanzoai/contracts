@@ -2,16 +2,17 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-solc = "0.8.22"
+solc = "0.8.31"
 optimizer = true
 optimizer_runs = 200
 via_ir = true
 evm_version = "cancun"
 
 remappings = [
-    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
-    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
     "@luxfi/=lib/standard/contracts/",
+    "@luxfi/standard/=lib/standard/contracts/",
+    "@openzeppelin/contracts/=lib/standard/lib/openzeppelin-contracts/contracts/",
+    "@openzeppelin/contracts-upgradeable/=lib/standard/lib/openzeppelin-contracts-upgradeable/contracts/",
     "forge-std/=lib/forge-std/src/",
 ]
 
@@ -19,7 +20,7 @@ remappings = [
 src = "src"
 out = "out"
 libs = ["lib"]
-solc = "0.8.22"
+solc = "0.8.31"
 optimizer = true
 optimizer_runs = 200
 via_ir = true
@@ -27,9 +28,10 @@ evm_version = "cancun"
 verbosity = 2
 fuzz = { runs = 256 }
 remappings = [
-    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
-    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
     "@luxfi/=lib/standard/contracts/",
+    "@luxfi/standard/=lib/standard/contracts/",
+    "@openzeppelin/contracts/=lib/standard/lib/openzeppelin-contracts/contracts/",
+    "@openzeppelin/contracts-upgradeable/=lib/standard/lib/openzeppelin-contracts-upgradeable/contracts/",
     "forge-std/=lib/forge-std/src/",
 ]
 
