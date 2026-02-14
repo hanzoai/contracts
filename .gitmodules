@@ -9,4 +9,4 @@
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
 [submodule "lib/standard"]
 	path = lib/standard
-	url = https://github.com/luxfi/standard
+	url = ../../.git/modules/lib/standard
