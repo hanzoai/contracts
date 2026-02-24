@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 import "forge-std/Script.sol";
 import "../src/AIToken.sol";
-import "../src/HanzoRegistry.sol";
+import "../src/identity-registry/HanzoRegistry.sol";
 import "../src/AIFaucet.sol";
 import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
 
