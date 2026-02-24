@@ -44,6 +44,11 @@ number_underscore = "thousands"
 quote_style = "double"
 single_line_statement_blocks = "preserve"
 
+[rpc_endpoints]
+hanzo_mainnet = "http://127.0.0.1:19630/ext/bc/2MqjR3NQTSCTmMRirA7NpHsv2nsgNDCrzdhb1Pt15xbb8CHQRF/rpc"
+hanzo_testnet = "http://127.0.0.1:19640/ext/bc/uRzy7Z9drJxuVdCKkdqj6ZTCYcx1hLJpuaGFHG4MdUcYWDa8b/rpc"
+hanzo_devnet = "http://127.0.0.1:19650/ext/bc/8saqkhsUrijPci3RXQnNaaLLkYXBErauhwUsZZwdj8erxeaZv/rpc"
+
 [doc]
 out = "docs"
 repository = "https://github.com/hanzoai/hanzo"
