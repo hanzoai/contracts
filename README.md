@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="contracts" width="880"></p>
+
 # hanzo-solidity
 
 [![npm][npm-img]][npm-url]
