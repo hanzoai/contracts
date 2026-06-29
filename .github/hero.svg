@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="contracts">
+<rect width="1280" height="640" fill="#0A0A0A"/>
+<svg x="96" y="215" width="210" height="210" viewBox="0 0 67 67"><path d="M22.21 67V44.6369H0V67H22.21Z" fill="#fff"/><path d="M66.7038 22.3184H22.2534L0.0878906 44.6367H44.4634L66.7038 22.3184Z" fill="#fff"/><path d="M22.21 0H0V22.3184H22.21V0Z" fill="#fff"/><path d="M66.7198 0H44.5098V22.3184H66.7198V0Z" fill="#fff"/><path d="M66.7198 67V44.6369H44.5098V67H66.7198Z" fill="#fff"/></svg>
+<text x="378" y="276" font-family="Inter,system-ui,-apple-system,sans-serif" font-size="78" font-weight="800" letter-spacing="-2" fill="#ffffff">contracts</text>
+<text x="378" y="322" font-family="Inter,system-ui,sans-serif" font-size="30" fill="#ffffff" opacity=".66">Hanzo smart contracts — ERC20, staking, governance</text>
+<rect x="378" y="338" width="806" height="3" rx="1.5" fill="#ffffff" opacity=".9"/>
+<text x="378" y="390" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity=".5">github.com/hanzoai</text>
+<text x="1184" y="390" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="600" fill="#ffffff" opacity=".5">hanzo.ai</text>
+</svg>
