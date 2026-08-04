@@ -2,7 +2,7 @@
   "name": "@hanzo/contracts",
   "version": "1.0.0",
   "description": "Hanzo AI Smart Contracts - AI infrastructure and identity on blockchain",
-  "license": "BSD-3-Clause",
+  "license": "MIT OR Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/hanzoai/hanzo.git",
