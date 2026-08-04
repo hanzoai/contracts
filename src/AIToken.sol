@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT OR Apache-2.0
 pragma solidity ^0.8.31;
 
 import {ERC20, IERC20, IERC20Metadata} from "@luxfi/tokens/LRC20/LRC20.sol";
