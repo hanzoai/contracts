@@ -18,7 +18,7 @@ env:
 jobs:
   contract-inventory:
     name: Contract Inventory
-    runs-on: ubuntu-latest
+    runs-on: linux-amd64
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,7 +38,7 @@ jobs:
 
   build-test:
     name: Build & Test
-    runs-on: ubuntu-latest
+    runs-on: linux-amd64
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,7 +69,7 @@ jobs:
 
   coverage:
     name: Code Coverage
-    runs-on: ubuntu-latest
+    runs-on: linux-amd64
     steps:
       - uses: actions/checkout@v4
         with:
@@ -100,7 +100,7 @@ jobs:
 
   gas-analysis:
     name: Gas Analysis
-    runs-on: ubuntu-latest
+    runs-on: linux-amd64
     steps:
       - uses: actions/checkout@v4
         with:
@@ -129,7 +129,7 @@ jobs:
   audit-summary:
     name: Audit Summary
     needs: [contract-inventory, build-test, coverage, gas-analysis]
-    runs-on: ubuntu-latest
+    runs-on: linux-amd64
     if: always()
     steps:
       - name: Generate Summary
